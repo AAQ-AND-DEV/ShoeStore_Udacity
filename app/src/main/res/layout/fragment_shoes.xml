@@ -20,11 +20,15 @@
         </LinearLayout>
     </ScrollView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/newShoeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_add"
         android:contentDescription="@string/new_shoe_button_cd"
-
+        android:background="@color/colorAccent"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/margin_huge"
+        android:layout_marginEnd="@dimen/margin_huge"
         />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

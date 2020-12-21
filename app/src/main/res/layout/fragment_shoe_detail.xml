@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+
+        <variable
+            name="detailFragment"
+            type="com.udacity.shoestore.views.ShoeDetailFragment" />
+
+    </data>
+<!-- Complex layout, best to use ConstraintLayout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/nameText"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/nameEt"
+            style="@style/edit_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:inputType="text"
+            android:text="@={shoe.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/nameText"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/brandText"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/brand"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameText" />
+
+        <EditText
+            android:id="@+id/brandEt"
+            style="@style/edit_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/brand"
+            android:text="@={shoe.company}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/brandText"
+            app:layout_constraintTop_toBottomOf="@id/nameEt" />
+
+        <TextView
+            android:id="@+id/sizeText"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/brandText" />
+
+        <EditText
+            android:id="@+id/sizeEt"
+            style="@style/edit_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/size"
+            android:text="@={`` + shoe.size}"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sizeText"
+            app:layout_constraintTop_toBottomOf="@id/brandEt" />
+
+        <TextView
+            android:id="@+id/descText"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sizeText" />
+
+        <EditText
+            android:id="@+id/descEt"
+            style="@style/edit_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/description"
+            android:text="@={shoe.description}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/descText"
+            app:layout_constraintTop_toBottomOf="@id/sizeEt" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_shoe"
+            android:layout_marginBottom="@dimen/margin_huge"
+            android:onClick="@{()->detailFragment.addShoe()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,44 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!-- This is a simple view, but creating nice spacing seemed to justify a constraintLayout-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/margin_large">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/instructionsHeaderText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/instructions"
-        android:textColor="@color/color_primary_dark"
-        android:textSize="@dimen/header_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <TextView
-        android:id="@+id/instructions_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/instructions_text"
-        android:textColor="@color/color_primary"
-        android:textSize="@dimen/label_size"
-        app:layout_constraintBottom_toTopOf="@+id/store_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/instructionsHeaderText" />
+    </data>
+<!-- simple layout, justifying LinearLayout -->
+    <LinearLayout
+        tools:context=".views.InstructionsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_large"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/store_button"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:textSize="@dimen/button_text_size"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_large"
-        android:text="@string/to_shoe_store"
-        app:layout_constraintTop_toBottomOf="@id/instructions_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/instructionsHeaderText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="@string/instructions"
+            android:textColor="@color/color_primary_dark"
+            android:textSize="@dimen/header_size" />
+
+        <TextView
+            android:id="@+id/instructions_text"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:textAlignment="center"
+            android:text="@string/instructions_text"
+            android:textColor="@color/color_primary"
+            android:textSize="@dimen/label_size" />
+
+        <Button
+            android:id="@+id/store_button"
+            android:layout_gravity="center"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/to_shoe_store"
+            android:textSize="@dimen/button_text_size" />
+    </LinearLayout>
+</layout>

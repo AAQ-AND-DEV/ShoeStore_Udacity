@@ -10,6 +10,10 @@
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/loginFragment" />
     </fragment>
     <fragment
@@ -19,6 +23,8 @@
         <action
             android:id="@+id/action_welcomeFragment_to_instructionsFragment"
             app:destination="@id/instructionsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
             app:popUpTo="@id/loginFragment" />
     </fragment>
     <fragment
@@ -28,10 +34,33 @@
         <action
             android:id="@+id/action_instructionsFragment_to_shoesFragment"
             app:destination="@id/shoesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/shoesFragment"
         android:name="com.udacity.shoestore.views.shoes.ShoesFragment"
-        android:label="@string/app_name" />
+        android:label="@string/app_name" >
+        <action
+            android:id="@+id/action_shoesFragment_to_shoeDetailFragment"
+            app:destination="@id/shoeDetailFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailFragment"
+        android:name="com.udacity.shoestore.views.ShoeDetailFragment"
+        android:label="ShoeDetailFragment" >
+        <action
+            android:id="@+id/action_shoeDetailFragment_to_shoesFragment"
+            app:destination="@id/shoesFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/shoesFragment" />
+    </fragment>
 </navigation>

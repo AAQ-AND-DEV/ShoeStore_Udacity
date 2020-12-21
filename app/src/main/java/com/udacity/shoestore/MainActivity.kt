@@ -34,10 +34,12 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.nav_host_fragment)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
-        val toolbar = Toolbar(this)
-        NavigationUI.setupWithNavController(toolbar, navController)
+
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        return findNavController(R.id.nav_host_fragment).navigateUp()
+    }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_logout, menu)
         return super.onCreateOptionsMenu(menu)

@@ -8,6 +8,7 @@ import com.udacity.shoestore.models.Shoe
 
 class ShoesViewModel : ViewModel() {
 
+    private val backShoeList = mutableListOf<Shoe>()
     private val _shoesList = MutableLiveData<List<Shoe>>()
     val shoesList: LiveData<List<Shoe>>
         get() = _shoesList
@@ -22,7 +23,7 @@ class ShoesViewModel : ViewModel() {
     }
 
     fun createList(): List<Shoe>{
-        val shoes = mutableListOf<Shoe>()
+
 
         val pumaTread = Shoe("Treaders", 12.0, "Puma", "comfortable x-trainer", mutableListOf("img") )
         val nikeCross = Shoe("Cross-Fit", 9.5, "Nike", "great for cross-fit", mutableListOf("img"))
@@ -32,18 +33,19 @@ class ShoesViewModel : ViewModel() {
         val heels = Shoe("Heels", 7.0, "Heel Factory", "Just great heels", mutableListOf("img"))
         val clogs = Shoe("Clogs", 14.5, "Big Clogs", "Big Clogs has the clogs for you", mutableListOf("img"))
 
-        shoes.add(pumaTread)
-        shoes.add(nikeCross)
-        shoes.add(adidasYups)
-        shoes.add(reebokDoos)
-        shoes.add(boots)
-        shoes.add(heels)
-        shoes.add(clogs)
+        backShoeList.add(pumaTread)
+        backShoeList.add(nikeCross)
+        backShoeList.add(adidasYups)
+        backShoeList.add(reebokDoos)
+        backShoeList.add(boots)
+        backShoeList.add(heels)
+        backShoeList.add(clogs)
 
-        return shoes
+        return backShoeList
     }
     fun addShoe(shoe: Shoe) {
-        _shoesList.value?.plus(shoe)
+        backShoeList.add(shoe)
+        _shoesList.value = backShoeList
     }
 
     override fun onCleared() {

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!-- This is a simple view, justifying a LinearLayout-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -7,51 +7,47 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_primary"
+        android:orientation="vertical"
         tools:context=".views.WelcomeFragment">
 
         <TextView
             android:id="@+id/welcome_one_text"
-            style="@style/label_style"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="@dimen/margin_huge"
+            android:layout_marginTop="@dimen/margin_large"
             android:layout_marginEnd="@dimen/margin_huge"
+            android:layout_weight="1"
             android:text="@string/welcome_one"
             android:textAlignment="center"
-            app:layout_constraintBottom_toTopOf="@id/welcome_two_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textColor="@color/color_primary_dark"
+            android:textSize="@dimen/label_size" />
 
         <TextView
             android:id="@+id/welcome_two_text"
-            style="@style/label_style"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="@dimen/margin_huge"
             android:layout_marginEnd="@dimen/margin_huge"
+            android:layout_weight="1"
             android:text="@string/welcome_two"
             android:textAlignment="center"
-
-            app:layout_constraintBottom_toTopOf="@id/instructions_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcome_one_text" />
+            android:textColor="@color/color_primary"
+            android:textSize="@dimen/label_size" />
 
         <Button
             android:id="@+id/instructions_button"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_huge"
+            android:layout_gravity="center"
             android:text="@string/instructions"
-            android:textSize="@dimen/button_text_size"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcome_two_text" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:textSize="@dimen/button_text_size" />
+
+
+    </LinearLayout>
 </layout>
