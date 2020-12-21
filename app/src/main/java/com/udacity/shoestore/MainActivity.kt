@@ -29,7 +29,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         Timber.plant(Timber.DebugTree())
-        viewModel.shoesList.observe(this, Observer {})
+        //simply done to init viewModel
+        viewModel.shoesList.observe(this, {})
 
         val navController = this.findNavController(R.id.nav_host_fragment)
         appBarConfiguration = AppBarConfiguration(navController.graph)

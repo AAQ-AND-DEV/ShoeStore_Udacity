@@ -52,6 +52,7 @@
         <EditText
             android:id="@+id/brandEt"
             style="@style/edit_text_style"
+            android:inputType="text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/brand"
@@ -95,6 +96,7 @@
             style="@style/edit_text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:hint="@string/description"
             android:text="@={shoe.description}"
             app:layout_constraintEnd_toEndOf="parent"
