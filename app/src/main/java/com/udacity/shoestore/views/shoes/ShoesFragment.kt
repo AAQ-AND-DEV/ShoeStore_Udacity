@@ -35,6 +35,7 @@ class ShoesFragment : Fragment() {
             shoes->
             val shoesLL = binding.shoesLl
             for (shoe in shoes){
+                //Attained programmatic cardview params from https://android--code.blogspot.com/2018/02/android-kotlin-create-cardview.html
                 val cardView = CardView(requireContext())
                 val layoutParams = LayoutParams(
                     LayoutParams.MATCH_PARENT, // CardView width
