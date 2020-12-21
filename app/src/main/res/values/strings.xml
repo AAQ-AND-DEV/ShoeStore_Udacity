@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="label_format">%s:</string>
+    <string name="new_user">New User</string>
+    <string name="existing_user">Existing User</string>
+    <string name="login">Login</string>
+    <string name="welcome_two">Click Below to See Instructions</string>
+    <string name="welcome_one">Hello! Welcome to the Awesome Shoe Store</string>
+    <string name="instructions">Instructions</string>
+    <string name="to_shoe_store">To Shoe Store</string>
+    <string name="instructions_text">The Button Below Will Bring You to the Shoe Store. There you will see a current list of shoes. Click the \'New Shoe\' Button to Add a Shoe to the Inventory</string>
+    <string name="new_shoe_button_cd">Button for adding new shoe</string>
+    <string name="shoe_item_desc">%s %s, size: %s</string>
+    <string name="logout">Logout</string>
+    <string name="welcome">Welcome</string>
+</resources>

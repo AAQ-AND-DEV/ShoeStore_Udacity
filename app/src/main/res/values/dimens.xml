@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="label_size">32sp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_huge">24dp</dimen>
+    <dimen name="edit_text_width">160dp</dimen>
+    <dimen name="button_text_size">24sp</dimen>
+    <dimen name="header_size">48sp</dimen>
+</resources>
